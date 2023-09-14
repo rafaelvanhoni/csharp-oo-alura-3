@@ -16,7 +16,6 @@ using (HttpClient client = new HttpClient())
 
         LinqFilter.FiltrarTodosOsGenerosMusicais(musicas);
 
-
     }
     catch (Exception ex)
     {
