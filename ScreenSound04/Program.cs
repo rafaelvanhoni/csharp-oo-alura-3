@@ -4,7 +4,6 @@ using ScreenSound04.Modelos;
 
 using (HttpClient client = new HttpClient())
 {
-
     try
     {
         string resposta = await client.GetStringAsync("https://guilhermeonrails.github.io/api-csharp-songs/songs.json");
@@ -23,5 +22,4 @@ using (HttpClient client = new HttpClient())
     }
 
     Console.ReadKey();
-
 }
