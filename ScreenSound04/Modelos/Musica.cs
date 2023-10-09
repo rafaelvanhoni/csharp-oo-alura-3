@@ -26,7 +26,22 @@ internal class Musica
         {
             return int.Parse(AnoString!);
         }
-    }*/
+    } */
+
+    [JsonPropertyName("key")]
+    public int Key { get; set; }
+
+    private string[] tonalidades = { "C", "C#", "D", "Eb", "E", "F", "F#", "G", "Ab", "A", "Bb", "B" };
+
+    public string Tonalidade => tonalidades[Key];
+    /* 
+    public string Tonalidade {
+        get
+        {
+            return tonalidades[Key];
+        }
+    } */
+
 
     public void ExibirDetalhesDaMusica()
     {
@@ -35,6 +50,7 @@ internal class Musica
         Console.WriteLine($"Duração sem segundos: {Duracao / 1000}");
         Console.WriteLine($"Gênero: {Genero}");
         Console.WriteLine($"Ano: {Ano}");
+        Console.WriteLine($"Tonalidade: {Tonalidade}");
 
     }
 }

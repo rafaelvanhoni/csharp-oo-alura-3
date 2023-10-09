@@ -12,10 +12,11 @@ using (HttpClient client = new HttpClient())
         //Console.ReadKey();
 
         var musicas = JsonSerializer.Deserialize<List<Musica>>(resposta)!;
-        /*
-        musicas[1998].ExibirDetalhesDaMusica();
-        Console.ReadKey();
         
+        musicas[1].ExibirDetalhesDaMusica();
+        Console.ReadKey();
+
+        /*
         LinqFilter.FiltrarTodosOsGenerosMusicais(musicas);
         Console.ReadKey();
 
@@ -30,9 +31,12 @@ using (HttpClient client = new HttpClient())
 
         LinqFilter.FiltrarMusicasPeloAno(musicas, 1999);
         Console.ReadKey();
-
         */
 
+        LinqFilter.FiltrarMusicasTonalidade(musicas, "C#");
+        Console.ReadKey();
+        
+        /*
         var musicasPreferidasDoRafael = new MusicasPreferidas("Rafael");
         musicasPreferidasDoRafael.AdicionarMusicasFavoritas(musicas[1]);
         musicasPreferidasDoRafael.AdicionarMusicasFavoritas(musicas[377]);
@@ -54,7 +58,18 @@ using (HttpClient client = new HttpClient())
         Console.ReadKey();
 
         musicasPreferidasDoRafael.GerarArquivoJson();
+        Console.ReadKey();
 
+        var musicasPreferidasDaMaria = new MusicasPreferidas("Maria");
+        musicasPreferidasDaMaria.AdicionarMusicasFavoritas(musicas[980]);
+        musicasPreferidasDaMaria.AdicionarMusicasFavoritas(musicas[513]);
+        musicasPreferidasDaMaria.AdicionarMusicasFavoritas(musicas[1024]);
+        musicasPreferidasDaMaria.AdicionarMusicasFavoritas(musicas[999]);
+        musicasPreferidasDaMaria.AdicionarMusicasFavoritas(musicas[37]);
+
+        musicasPreferidasDaMaria.GerarDocumentoTxtComAsMusicasFavoritas();
+        */
+ 
     }
     catch (Exception ex)
     {
